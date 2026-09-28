@@ -1,0 +1,8 @@
+<header class="navbar">
+  <a class="logo" routerLink="/">SHUBHAM KOTHAVADE</a>
+  <nav>
+    <ul>
+      @for (link of links; track link.path) { <li><a [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="link.options">{{ link.label }}</a></li> }
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,41 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0f172a;
+  color: #fff;
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #38bdf8;
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.active {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+  }
+}

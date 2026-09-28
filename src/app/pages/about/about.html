@@ -1,1 +1,43 @@
-<p>about works!</p>
+<section class="about">
+  <h1>About Me</h1>
+  <p class="summary">{{ summary }}</p>
+
+  <div class="stats">
+    @for (s of stats; track s.label) {
+      <div class="stat">
+        <strong>{{ s.value }}</strong>
+        <span>{{ s.label }}</span>
+      </div>
+    }
+  </div>
+
+  <h2>Experience</h2>
+  <div class="timeline">
+    @for (job of experience; track job.company) {
+      <article class="job">
+        <h3>{{ job.role }}</h3>
+        <p class="company">{{ job.company }}</p>
+        @if (job.client) {
+          <p class="client">Client: {{ job.client }}</p>
+        }
+        <p class="period">{{ job.period }}</p>
+        <ul>
+          @for (p of job.points; track p) {
+            <li>{{ p }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+
+  <h2>Education</h2>
+  <div class="education">
+    @for (e of education; track e.degree) {
+      <div class="edu">
+        <h3>{{ e.degree }}</h3>
+        <p>{{ e.place }}</p>
+        <span>{{ e.years }}</span>
+      </div>
+    }
+  </div>
+</section>

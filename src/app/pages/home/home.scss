@@ -1,0 +1,99 @@
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+.greeting {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin: 0.3rem 0;
+  color: #0f172a;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem;
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.primary {
+    background: #0284c7;
+    color: #fff;
+
+    &:hover {
+      background: #0369a1;
+    }
+  }
+
+  &.outline {
+    border: 2px solid #0284c7;
+    color: #0284c7;
+
+    &:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+
+  span {
+    padding: 0.4rem 1rem;
+    background: #e0f2fe;
+    color: #0369a1;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

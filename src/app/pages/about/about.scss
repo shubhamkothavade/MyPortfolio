@@ -1,0 +1,74 @@
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+h2 { margin: 2.5rem 0 1rem; color: #0284c7; }
+
+.summary {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+
+  strong { display: block; font-size: 2rem; color: #0284c7; }
+  span { color: #64748b; font-size: 0.9rem; }
+}
+
+.timeline {
+  border-left: 3px solid #bae6fd;
+  padding-left: 1.5rem;
+}
+
+.job {
+  position: relative;
+  margin-bottom: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -2.05rem;
+    top: 0.4rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0284c7;
+  }
+
+  h3 { margin: 0; }
+  .company { margin: 0.2rem 0; font-weight: 600; }
+  .client { margin: 0; color: #64748b; font-size: 0.9rem; }
+  .period { margin: 0.2rem 0 0.6rem; color: #0284c7; font-size: 0.9rem; }
+  ul { margin: 0; padding-left: 1.2rem; color: #475569; line-height: 1.6; }
+}
+
+.education {
+  display: grid;
+  gap: 1rem;
+}
+
+.edu {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+
+  h3 { margin: 0; }
+  p { margin: 0.2rem 0; color: #475569; }
+  span { color: #0284c7; font-size: 0.9rem; }
+}
