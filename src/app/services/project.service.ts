@@ -1,0 +1,619 @@
+import { Injectable } from '@angular/core';
+import { Project } from '../Models/project.model';
+
+@Injectable({ providedIn: 'root' })
+export class ProjectService {
+  private projects: Project[] = [
+    {
+  id: 1,
+
+  title: 'LeadCRM',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Web',
+
+  description:
+    'An enterprise CRM application used by approximately 200–300 salespersons, managers and store managers to manage the complete lead lifecycle from assignment and follow-up through sales activities.',
+
+  businessPurpose:
+    'The application was developed to centralize lead management and provide sales teams and management with better visibility into lead assignments, follow-ups, campaigns and sales activities. It helps users manage leads systematically instead of relying on manual tracking.',
+
+  role:
+    'Software Developer responsible for developing and maintaining application features, backend functionality, database operations, business workflows and production enhancements.',
+
+  highlights: [
+    'Role-based access control for Salespersons, Managers and Store Managers',
+    'Lead creation, assignment and status management',
+    'Lead follow-up and activity management',
+    'Campaign management',
+    'Store-wise and user-wise lead management',
+    'Dashboards and management reporting',
+    'User and role-based access management',
+    'Production issue resolution and application enhancements'
+  ],
+
+  responsibilities: [
+    'Developed backend functionality using ASP.NET Core MVC and C#',
+    'Implemented business workflows for lead assignment and follow-up',
+    'Developed database operations using Entity Framework Core and SQL Server',
+    'Implemented role-based functionality according to business requirements',
+    'Worked on dashboards and reporting functionality',
+    'Investigated and resolved production issues',
+    'Enhanced existing functionality based on business requirements',
+    'Worked with SQL queries, LINQ and Entity Framework Core for data operations'
+  ],
+
+  technicalDetails:
+    'The application is built using ASP.NET Core MVC with C# and Entity Framework Core. SQL Server is used as the primary database. LINQ and Entity Framework Core are used for database operations, while role-based authorization controls access to different areas of the application.',
+
+  challenges: [
+    'Managing different workflows and permissions for multiple user roles',
+    'Handling lead assignment and follow-up processes across sales teams and stores',
+    'Maintaining consistent data while multiple users work with leads simultaneously',
+    'Supporting production users and implementing business changes without affecting existing workflows'
+  ],
+
+  outcome:
+    'The system provides a centralized platform for managing sales leads and follow-up activities, giving sales teams and management better visibility into lead activity, assignments and progress.',
+
+  tech: [
+    'ASP.NET Core MVC',
+    'C#',
+    'SQL Server',
+    'Entity Framework Core',
+    'LINQ',
+    'Bootstrap',
+    'JavaScript'
+  ]
+}, 
+{
+  id: 2,
+
+  title: 'Company Helpdesk',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Web',
+
+  description:
+    'A company-wide helpdesk application that allows employees to raise, track and manage support tickets while enabling resolver teams to handle issues through a structured ticketing workflow.',
+
+  businessPurpose:
+    'The application was developed to centralize internal support requests and provide a structured process for ticket creation, assignment, resolution and tracking. It helps employees raise issues through a common platform while giving support teams better visibility into pending and resolved requests.',
+
+  role:
+    'Software Developer responsible for developing ticketing workflows, backend functionality, database operations, email notifications, SLA-related functionality and production enhancements.',
+
+  highlights: [
+    'Employee ticket creation and issue tracking',
+    'Automatic ticket assignment to resolver teams',
+    'Email notifications for ticket-related activities',
+    'SLA tracking and escalation workflows',
+    'Ticket status and lifecycle management',
+    'Resolver team management',
+    'Complete audit history for tickets',
+    'File attachment support for support requests',
+    'Dashboard and ticket monitoring functionality'
+  ],
+
+  responsibilities: [
+    'Developed and maintained ticket management functionality using ASP.NET Core MVC',
+    'Implemented backend business logic using C#',
+    'Designed and integrated SQL Server database operations',
+    'Implemented automated email notifications using SMTP',
+    'Worked on ticket assignment and resolver workflows',
+    'Implemented SLA tracking and escalation-related functionality',
+    'Integrated CKEditor for rich-text ticket descriptions and communication',
+    'Implemented file upload functionality for ticket attachments',
+    'Investigated and resolved production issues',
+    'Enhanced existing workflows based on business requirements'
+  ],
+
+  technicalDetails:
+    'The application is built using ASP.NET Core MVC and C#. SQL Server is used for storing tickets, users, departments, resolver teams and audit information. SMTP-based email services are used for automated notifications. CKEditor is integrated for rich-text ticket descriptions and communication, while file upload functionality allows users to attach supporting documents to tickets.',
+
+  challenges: [
+    'Designing a ticket lifecycle that supports different departments and resolver teams',
+    'Automatically assigning tickets to the appropriate support team',
+    'Ensuring users receive timely notifications when ticket status or ownership changes',
+    'Tracking SLA timelines and supporting escalation workflows',
+    'Maintaining a complete history of ticket activities for tracking and accountability',
+    'Handling file attachments while maintaining reliable ticket processing'
+  ],
+
+  outcome:
+    'The helpdesk provides employees with a centralized platform for raising and tracking support requests while giving resolver teams a structured workflow for assignment, communication, SLA monitoring and resolution.',
+
+  tech: [
+    'ASP.NET Core MVC',
+    'C#',
+    'SQL Server',
+    'SMTP Email',
+    'Entity Framework Core',
+    'CKEditor',
+    'JavaScript',
+    'Bootstrap'
+  ]
+},
+{
+  id: 3,
+
+  title: 'SAP ERP Integration',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Integration',
+
+  description:
+    'An enterprise integration solution connecting SAP ERP with internal HR and business applications for Attendance, Leave, Employee Master, Payslip and other business processes.',
+
+  businessPurpose:
+    'The integration was developed to exchange business and employee information between SAP ERP and internal applications. It reduces manual data processing and allows HR and business applications to retrieve and use SAP information through automated integration workflows.',
+
+  role:
+    'Software Developer responsible for developing and maintaining SAP integrations, implementing RFC/BAPI communication, processing SAP data, integrating SAP information with SQL Server applications and supporting production integration issues.',
+
+  highlights: [
+    'SAP RFC/BAPI integration with internal applications',
+    'Employee Master data synchronization',
+    'Attendance data integration',
+    'Leave balance and leave-related data integration',
+    'Payslip and payroll-related data integration',
+    'SAP-to-SQL data synchronization',
+    'Integration with HR and kiosk applications',
+    'Automated data processing to reduce manual operations',
+    'Performance improvements in SAP data retrieval'
+  ],
+
+  responsibilities: [
+    'Developed SAP integration functionality using C# and SAP RFC/BAPI communication',
+    'Worked with SAP RFC function modules to retrieve and process business data',
+    'Integrated SAP Employee Master information with SQL Server applications',
+    'Developed data processing workflows for Attendance and Leave information',
+    'Worked on Payslip-related SAP data integration',
+    'Implemented SAP-to-SQL synchronization for business applications',
+    'Processed SAP responses and mapped data into application-specific models',
+    'Investigated SAP connection, RFC and integration-related production issues',
+    'Optimized data retrieval and processing workflows for improved performance',
+    'Supported HR applications that depend on SAP employee and payroll information'
+  ],
+
+  technicalDetails:
+    'The integration layer was developed using C# and SAP .NET Connector-based RFC communication. SAP RFC/BAPI function modules are used to retrieve required business information, which is then processed and integrated with SQL Server-based applications. The integration supports employee, attendance, leave and payroll-related workflows and acts as a bridge between SAP ERP and internal web applications.',
+
+  challenges: [
+    'Working with SAP RFC/BAPI interfaces and understanding SAP-specific data structures',
+    'Handling SAP connection and destination-related configuration issues',
+    'Mapping SAP responses into application-specific models and database structures',
+    'Synchronizing SAP data with SQL Server while maintaining data consistency',
+    'Handling different HR workflows such as Attendance, Leave and Employee Master',
+    'Improving response and processing time for frequently requested SAP information'
+  ],
+
+  outcome:
+    'The integration reduced dependency on manual data processing and enabled internal HR and business applications to consume SAP information through automated workflows. Performance improvements also helped applications retrieve required SAP data more efficiently.',
+
+  tech: [
+    'C#',
+    'SAP RFC',
+    'SAP BAPI',
+    'SAP .NET Connector',
+    'ASP.NET Core',
+    'Web API',
+    'SQL Server',
+    'Entity Framework Core'
+  ]
+},
+{
+  id: 4,
+
+  title: 'Manufacturing Dashboard',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Dashboard',
+
+  description:
+    'A real-time manufacturing dashboard developed to monitor production activities, machine status and production progress across the shop floor.',
+
+  businessPurpose:
+    'The dashboard was developed to provide production and management teams with better visibility into manufacturing operations. It brings production information from the Oracle database into a centralized visual dashboard so users can monitor current production activity and machine status.',
+
+  role:
+    'Software Developer responsible for developing the dashboard interface, integrating Oracle database data, implementing production monitoring logic and building visual KPI and machine-status components.',
+
+  highlights: [
+    'Real-time production monitoring',
+    'Machine-wise production status',
+    'Production KPI cards',
+    'Live batch and roll tracking',
+    'Monthly production summary',
+    'Latest production records monitoring',
+    'Oracle database integration',
+    'Production status visualization',
+    'Shop-floor and management monitoring'
+  ],
+
+  responsibilities: [
+    'Developed the manufacturing dashboard using ASP.NET Core and C#',
+    'Integrated the application with the Oracle database',
+    'Developed database queries for retrieving production information',
+    'Implemented production KPI calculations and dashboard metrics',
+    'Developed machine-wise status monitoring components',
+    'Implemented live production and batch monitoring',
+    'Worked with production-related Oracle tables and data structures',
+    'Developed monthly production summary functionality',
+    'Implemented JavaScript-based dashboard interactions',
+    'Investigated and resolved production data and application issues'
+  ],
+
+  technicalDetails:
+    'The dashboard was developed using ASP.NET Core and C#. Oracle Database was used as the source of manufacturing and production information. Production data was retrieved using Oracle SQL queries and presented through dashboard components, KPI cards, machine sections and production summaries. JavaScript was used for client-side interactions and live dashboard updates.',
+
+  challenges: [
+    'Displaying production information in a simple and easily understandable dashboard',
+    'Retrieving and processing production data from Oracle tables',
+    'Monitoring multiple machines and production activities simultaneously',
+    'Keeping dashboard information updated for shop-floor monitoring',
+    'Presenting large amounts of production information without making the interface difficult to understand'
+  ],
+
+  outcome:
+    'The dashboard provides production and management teams with a centralized view of manufacturing activity, machine status and production progress, improving visibility into shop-floor operations.',
+
+  tech: [
+    'ASP.NET Core',
+    'C#',
+    'Oracle Database',
+    'Oracle SQL',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'Bootstrap'
+  ]
+},
+{
+  id: 5,
+
+  title: 'Stock and Order Mobile App',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Mobile',
+
+  description:
+    'A cross-platform mobile application developed for stock checking, product catalogue browsing, order management and order tracking.',
+
+  businessPurpose:
+    'The application was developed to provide users with a mobile interface for accessing product and stock information and managing order-related activities. It brings stock, catalogue and order functionality together in a single mobile application.',
+
+  role:
+    'Software Developer responsible for developing mobile application functionality using .NET MAUI, integrating REST APIs and implementing stock, catalogue and order-related workflows.',
+
+  highlights: [
+    'Stock checking',
+    'Product catalogue browsing',
+    'Product information display',
+    'Order creation and management',
+    'Order tracking',
+    'REST API integration',
+    'Cross-platform mobile application',
+    'Centralized access to product and order information'
+  ],
+
+  responsibilities: [
+    'Developed mobile application functionality using .NET MAUI and C#',
+    'Implemented stock checking functionality',
+    'Developed product catalogue screens and workflows',
+    'Integrated REST APIs with the mobile application',
+    'Implemented order-related functionality',
+    'Developed order tracking workflows',
+    'Worked with API responses and application data models',
+    'Handled mobile application navigation and user workflows',
+    'Integrated application functionality with backend services',
+    'Investigated and resolved application issues during development and production support'
+  ],
+
+  technicalDetails:
+    'The application was developed using .NET MAUI and C# to provide a cross-platform mobile experience. REST APIs were used to communicate between the mobile application and backend services. Stock, catalogue and order information was retrieved through API endpoints and presented through mobile-friendly interfaces.',
+
+  challenges: [
+    'Designing application screens that work effectively across different mobile screen sizes',
+    'Integrating multiple backend API endpoints into a single mobile application',
+    'Handling stock and product information efficiently on mobile devices',
+    'Maintaining reliable order-related workflows between the mobile application and backend services',
+    'Providing a simple user experience for frequently used stock and order operations'
+  ],
+
+  outcome:
+    'The mobile application provides users with convenient access to stock, product catalogue and order information, helping move important business operations from desktop-based workflows to a cross-platform mobile experience.',
+
+  tech: [
+    '.NET MAUI',
+    'C#',
+    'REST APIs',
+    'ASP.NET Core Web API',
+    'SQL Server',
+    'JSON',
+    'Android'
+  ]
+},
+{
+  id: 6,
+
+  title: 'HR, Attendance and Gate Pass Apps',
+
+  client: "D'Decor Exports & Imports Pvt. Ltd.",
+
+  category: 'Web',
+
+  description:
+    'A group of internal HR and business applications covering employee attendance, gate pass management and HR-related workflows. The applications support day-to-day employee operations and integrate with attendance devices and enterprise databases.',
+
+  businessPurpose:
+    'These applications were developed to digitize employee-related processes and reduce dependency on manual HR operations. The systems provide employees and HR teams with centralized functionality for attendance, gate pass processing and related employee services.',
+
+  role:
+    'Software Developer responsible for developing and maintaining HR applications, troubleshooting attendance and RFID issues, implementing reports, integrating database functionality and supporting production systems.',
+
+  highlights: [
+    'Employee attendance management',
+    'RFID-based attendance integration',
+    'Attendance status monitoring',
+    'Sales Gate Pass management',
+    'HR-related employee workflows',
+    'RDLC reporting',
+    'Employee data integration',
+    'Database-driven HR operations',
+    'IIS deployment and production support'
+  ],
+
+  responsibilities: [
+    'Developed and maintained ASP.NET Core MVC applications for HR processes',
+    'Worked on RFID-based attendance functionality',
+    'Investigated and resolved attendance machine and data-related issues',
+    'Implemented attendance status and employee attendance workflows',
+    'Developed Sales Gate Pass functionality',
+    'Created and maintained RDLC reports',
+    'Worked with SQL Server database operations and queries',
+    'Optimized database operations for HR applications',
+    'Deployed and maintained applications on IIS',
+    'Provided ongoing production support and resolved application issues'
+  ],
+
+  technicalDetails:
+    'The applications were developed using ASP.NET Core MVC and C# with SQL Server as the primary database. Attendance functionality integrates with RFID-based attendance devices and processes machine-generated attendance information. RDLC was used for reporting requirements, while IIS was used for application deployment and production hosting.',
+
+  challenges: [
+    'Troubleshooting inconsistent attendance data received from RFID devices',
+    'Handling real-time attendance events and employee status information',
+    'Maintaining reliable communication between attendance devices and the application',
+    'Managing HR workflows while keeping employee data consistent',
+    'Supporting production applications and resolving issues without disrupting daily HR operations'
+  ],
+
+  outcome:
+    'The applications provide centralized digital workflows for attendance, gate pass and HR-related operations, helping HR teams manage employee processes more efficiently and reducing dependency on manual operations.',
+
+  tech: [
+    'ASP.NET Core MVC',
+    'C#',
+    'SQL Server',
+    'RFID',
+    'RDLC',
+    'IIS',
+    'JavaScript',
+    'Bootstrap'
+  ]
+},
+{
+  id: 7,
+
+  title: 'Enterprise Modules (IQMS, Powerol AMC)',
+
+  client: 'Mahindra and Mahindra',
+
+  category: 'Web',
+
+  description:
+    'A set of enterprise web application modules developed and maintained for business processes including IQMS, Powerol AMC, Charge Type and Product Type management.',
+
+  businessPurpose:
+    'The modules were developed to support specific business operations and provide users with structured workflows for managing enterprise data. The applications also required continuous maintenance and production support to ensure reliable business operations.',
+
+  role:
+    'Software Developer responsible for developing application modules, implementing business logic, working with SQL Server databases, fixing production issues and enhancing existing functionality.',
+
+  highlights: [
+    'IQMS module development and maintenance',
+    'Powerol AMC module functionality',
+    'Charge Type management',
+    'Product Type management',
+    'Business workflow implementation',
+    'Database-driven enterprise functionality',
+    'Production issue resolution',
+    'Application maintenance and enhancements'
+  ],
+
+  responsibilities: [
+    'Developed and maintained enterprise application modules using ASP.NET MVC',
+    'Implemented business logic using C#',
+    'Developed database functionality using SQL Server',
+    'Worked on IQMS-related application functionality',
+    'Worked on Powerol AMC module functionality',
+    'Implemented Charge Type and Product Type functionality',
+    'Investigated and resolved production issues',
+    'Enhanced existing modules based on business requirements',
+    'Worked with SQL queries and database operations',
+    'Supported application stability and ongoing maintenance'
+  ],
+
+  technicalDetails:
+    'The enterprise modules were developed using ASP.NET MVC and C#. SQL Server was used for application data storage and database operations. The development involved implementing business workflows, managing enterprise data and maintaining existing application functionality according to business requirements.',
+
+  challenges: [
+    'Understanding and implementing business-specific enterprise workflows',
+    'Working with existing application modules and maintaining compatibility with current functionality',
+    'Resolving production issues while minimizing impact on business operations',
+    'Implementing changes across existing modules without affecting dependent functionality',
+    'Maintaining reliable database operations for enterprise applications'
+  ],
+
+  outcome:
+    'The modules supported business-specific enterprise processes and provided users with structured application workflows. Continuous maintenance and production support helped keep the applications stable and aligned with changing business requirements.',
+
+  tech: [
+    'ASP.NET MVC',
+    'C#',
+    'SQL Server',
+    'Entity Framework',
+    'LINQ',
+    'JavaScript',
+    'Bootstrap'
+  ]
+},
+{
+  id: 8,
+
+  title: 'Customer Feedback Survey Module',
+
+  client: 'Star Union Dai-ichi Life Insurance',
+
+  category: 'Web',
+
+  description:
+    'A web-based customer feedback and survey management application developed to collect, manage and process customer feedback information for an insurance business.',
+
+  businessPurpose:
+    'The application was developed to provide a structured platform for collecting customer feedback and managing survey information. It helps organize customer responses and provides a reliable backend for storing and processing survey data.',
+
+  role:
+    'Software Developer responsible for developing survey functionality, implementing database operations, building repository-based data access and optimizing SQL Server stored procedures.',
+
+  highlights: [
+    'Customer feedback collection',
+    'Survey management',
+    'Customer response processing',
+    'Structured survey data management',
+    'Repository Pattern implementation',
+    'Entity Framework Core integration',
+    'SQL Server stored procedure optimization',
+    'Database-driven application workflows'
+  ],
+
+  responsibilities: [
+    'Developed web application functionality using ASP.NET Core MVC',
+    'Implemented customer feedback and survey workflows',
+    'Developed repository-based data access using Entity Framework Core',
+    'Worked with SQL Server database operations',
+    'Developed and optimized stored procedures',
+    'Implemented data retrieval and processing functionality',
+    'Worked on application-level business logic',
+    'Investigated and resolved application and database-related issues',
+    'Improved database query performance where required'
+  ],
+
+  technicalDetails:
+    'The application was developed using ASP.NET Core MVC with Entity Framework Core following a Repository Pattern for data access. SQL Server was used as the primary database, with stored procedures used for specific data processing and performance-sensitive operations.',
+
+  challenges: [
+    'Managing customer survey responses and maintaining consistent data',
+    'Designing reusable repository-based database operations',
+    'Optimizing stored procedures for efficient data retrieval',
+    'Handling survey-related business logic and data processing',
+    'Maintaining application performance while processing customer feedback data'
+  ],
+
+  outcome:
+    'The application provided a structured platform for collecting and managing customer feedback while improving the organization and processing of survey information.',
+
+  tech: [
+    'ASP.NET Core MVC',
+    'C#',
+    'Entity Framework Core',
+    'SQL Server',
+    'Stored Procedures',
+    'Repository Pattern',
+    'LINQ',
+    'JavaScript'
+  ]
+},
+{
+  id: 9,
+
+  title: 'Hotel Booking and Customer Management',
+
+  client: "Aryan's Nextgen Ltd.",
+
+  category: 'Web',
+
+  description:
+    'A set of freelance web applications consisting of a Hotel Booking System and a Customer Management System developed to manage booking operations and customer information.',
+
+  businessPurpose:
+    'The applications were developed to digitize hotel booking and customer management processes. The systems provide structured workflows for managing customer information, bookings and related business data.',
+
+  role:
+    'Freelance Software Developer responsible for developing the application functionality, database operations, booking workflows, customer management features and user interfaces.',
+
+  highlights: [
+    'Hotel booking management',
+    'Customer information management',
+    'Booking creation and tracking',
+    'Customer records management',
+    'Database-driven business workflows',
+    'Razor Pages-based web interface',
+    'Entity Framework Core integration',
+    'Responsive web interface'
+  ],
+
+  responsibilities: [
+    'Developed the Hotel Booking System using ASP.NET Core',
+    'Developed Customer Management functionality',
+    'Implemented booking-related business workflows',
+    'Implemented customer data management',
+    'Developed database operations using Entity Framework Core',
+    'Designed Razor Pages for application screens',
+    'Implemented client-side functionality using JavaScript',
+    'Worked with SQL Server database operations',
+    'Handled application validation and business rules',
+    'Tested and fixed application functionality during development'
+  ],
+
+  technicalDetails:
+    'The applications were developed using ASP.NET Core and Razor Pages. Entity Framework Core was used for database access and SQL Server was used as the primary database. JavaScript and CSS were used to implement client-side interactions and responsive application interfaces.',
+
+  challenges: [
+    'Designing a reliable booking workflow',
+    'Managing customer information and related booking records',
+    'Maintaining data consistency between customers and bookings',
+    'Implementing validation for booking and customer information',
+    'Creating a simple interface for managing booking and customer operations'
+  ],
+
+  outcome:
+    'The applications provided structured digital workflows for hotel booking and customer management, replacing manual processes with centralized web-based functionality.',
+
+  tech: [
+    'ASP.NET Core',
+    'Razor Pages',
+    'C#',
+    'Entity Framework Core',
+    'SQL Server',
+    'JavaScript',
+    'CSS',
+    'HTML'
+  ]
+},
+
+  ];
+
+  getAll() {
+    return this.projects;
+  }
+
+  getById(id: number) {
+    return this.projects.find(p => p.id === id);
+  }
+}

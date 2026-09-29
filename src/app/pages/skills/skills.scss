@@ -1,0 +1,263 @@
+.skills {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+
+  color: #0284c7;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 0.8rem;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+
+  color: #0f172a;
+}
+
+.intro {
+  margin: 0;
+
+  max-width: 720px;
+
+  color: #64748b;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   SKILL GRID
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1.2rem;
+}
+
+
+/* =========================
+   CURRENTLY LEARNING
+========================= */
+
+.learning {
+  margin-top: 2.5rem;
+
+  padding: 2.5rem;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #075985 100%
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.14);
+}
+
+.learning-content {
+  max-width: 720px;
+}
+
+.learning .eyebrow {
+  color: #38bdf8;
+}
+
+.learning h2 {
+  margin: 0 0 0.8rem;
+
+  font-size: 1.8rem;
+}
+
+.learning p:not(.eyebrow) {
+  margin: 0;
+
+  color: #dbeafe;
+
+  line-height: 1.7;
+}
+
+.learning-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.6rem;
+
+  margin-top: 1.3rem;
+}
+
+.learning-tags span {
+  padding: 0.45rem 0.85rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.skills-cta {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-top: 2rem;
+
+  padding: 2.3rem 2.5rem;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #075985 100%
+    );
+
+  color: #fff;
+}
+
+.skills-cta .eyebrow {
+  color: #38bdf8;
+}
+
+.skills-cta h2 {
+  margin: 0 0 0.5rem;
+
+  font-size: 1.7rem;
+}
+
+.skills-cta p:not(.eyebrow) {
+  margin: 0;
+
+  color: #dbeafe;
+
+  line-height: 1.6;
+}
+
+.cta-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.8rem 1.3rem;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #0369a1;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+  .skills {
+    padding: 3rem 1.2rem 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning {
+    margin-top: 3rem;
+
+    padding: 2rem;
+  }
+
+  .skills-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 2rem;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
+  .learning,
+  .skills-cta {
+    border-radius: 16px;
+  }
+
+}

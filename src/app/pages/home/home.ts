@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
-  imports: [],
   selector: 'app-home',
+  imports: [RouterLink],
   styleUrl: './home.scss',
   templateUrl: './home.html',
 })
 export class Home {
-  name = 'Shubham Kothavade';
-  role = 'Software Developer | C# & ASP.NET Core';
+
+  private projectService = inject(ProjectService);
+
+  name = 'SHUBHAM R. KOTHAVADE';
+
+  role = 'Senior Consultant | C# & ASP.NET Core';
+
   tagline =
-    '4+ years building enterprise applications, SAP integrations and dashboards. Now adding Angular to my stack.';
+    '4+ years building enterprise applications, SAP integrations, dashboards and business solutions.';
+
+  featuredProjects = this.projectService.getAll().slice(0, 3);
 }

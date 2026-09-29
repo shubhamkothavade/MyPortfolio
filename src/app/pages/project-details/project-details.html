@@ -1,0 +1,112 @@
+<section class="project-details">
+
+  <a routerLink="/projects" class="back-link">
+    ← Back to Projects
+  </a>
+
+  @if (project) {
+
+    <div class="header">
+
+      <span class="category">
+        {{ project.category }}
+      </span>
+
+      <h1>{{ project.title }}</h1>
+
+      <p class="client">
+        Client: {{ project.client }}
+      </p>
+
+      <p class="description">
+        {{ project.description }}
+      </p>
+
+    </div>
+
+    <div class="content">
+
+      <div class="section">
+        <h2>Project Overview</h2>
+        <p>{{ project.description }}</p>
+      </div>
+
+      <div class="section">
+        <h2>Business Purpose</h2>
+        <p>{{ project.businessPurpose }}</p>
+      </div>
+
+      <div class="section">
+        <h2>My Role</h2>
+        <p>{{ project.role }}</p>
+      </div>
+
+      <div class="section">
+        <h2>Key Features</h2>
+
+        <ul>
+          @for (highlight of project.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>My Responsibilities</h2>
+
+        <ul>
+          @for (responsibility of project.responsibilities; track responsibility) {
+            <li>{{ responsibility }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Technical Implementation</h2>
+        <p>{{ project.technicalDetails }}</p>
+      </div>
+
+      <div class="section">
+        <h2>Challenges & Solutions</h2>
+
+        <ul>
+          @for (challenge of project.challenges; track challenge) {
+            <li>{{ challenge }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Technologies Used</h2>
+
+        <div class="tech">
+          @for (technology of project.tech; track technology) {
+            <span>{{ technology }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Outcome</h2>
+        <p>{{ project.outcome }}</p>
+      </div>
+
+    </div>
+
+  } @else {
+
+    <div class="not-found">
+      <h1>Project Not Found</h1>
+
+      <p>
+        The requested project could not be found.
+      </p>
+
+      <a routerLink="/projects">
+        Back to Projects
+      </a>
+    </div>
+
+  }
+
+</section>

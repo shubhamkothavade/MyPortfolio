@@ -1,9 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { ProjectCard } from '../../components/project-card/project-card';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
-  imports: [],
   selector: 'app-projects',
-  styleUrl: './projects.scss',
+  imports: [ProjectCard],
   templateUrl: './projects.html',
+  styleUrl: './projects.scss',
 })
-export class Projects {}
+export class Projects {
+  private service = inject(ProjectService);
+  private all = this.service.getAll();
+
+  filters = ['All', 'Web', 'Integration', 'Dashboard', 'Mobile'];
+  selected = signal('All');
+
+  visible = computed(() => {
+    const f = this.selected();
+    return f === 'All' ? this.all : this.all.filter(p => p.category === f);
+  });
+}

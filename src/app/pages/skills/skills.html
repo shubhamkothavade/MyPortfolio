@@ -1,1 +1,64 @@
-<p>skills works!</p>
+<section class="skills">
+
+  <!-- Header -->
+  <div class="page-header">
+    <p class="eyebrow">TECHNICAL SKILLS</p>
+
+    <h1>What I Work With</h1>
+
+    <p class="intro">
+      Technologies and tools I use to build enterprise applications,
+      integrations, databases and modern web solutions.
+    </p>
+  </div>
+
+  <!-- Skill Categories -->
+  <div class="grid">
+    @for (c of categories; track c.title) {
+      <app-skill-card [category]="c" />
+    }
+  </div>
+
+  <!-- Learning Section -->
+  <section class="learning">
+
+    <div class="learning-content">
+      <p class="eyebrow">CURRENTLY LEARNING</p>
+
+      <h2>Expanding my frontend skills.</h2>
+
+      <p>
+        I'm currently strengthening my Angular and TypeScript skills
+        to build modern, scalable frontend applications alongside my
+        .NET backend experience.
+      </p>
+
+      <div class="learning-tags">
+        <span>Angular</span>
+        <span>TypeScript</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="skills-cta">
+
+    <div>
+      <p class="eyebrow">LET'S BUILD SOMETHING</p>
+
+      <h2>Have a project in mind?</h2>
+
+      <p>
+        I'm interested in building reliable business applications,
+        integrations and modern web solutions.
+      </p>
+    </div>
+
+    <a class="cta-button" routerLink="/contact">
+      Get In Touch →
+    </a>
+
+  </section>
+
+</section>

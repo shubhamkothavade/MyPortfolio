@@ -1,0 +1,82 @@
+<article class="card">
+
+  <!-- Screenshot / Placeholder -->
+
+  <div class="project-image">
+
+    <div class="image-placeholder">
+
+      <span class="placeholder-icon">▣</span>
+
+      <span>Project Preview</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- Card Content -->
+
+  <div class="card-content">
+
+    <div class="top-row">
+
+      <span class="category">
+        {{ project().category }}
+      </span>
+
+      <span class="project-number">
+        #{{ project().id }}
+      </span>
+
+    </div>
+
+    <h3>
+      {{ project().title }}
+    </h3>
+
+    <p class="client">
+      {{ project().client }}
+    </p>
+
+    <p class="desc">
+      {{ project().description }}
+    </p>
+
+
+    <!-- Technologies -->
+
+    <div class="tech">
+
+      @for (t of project().tech.slice(0, 4); track t) {
+
+        <span>
+          {{ t }}
+        </span>
+
+      }
+
+      @if (project().tech.length > 4) {
+
+        <span class="more">
+          +{{ project().tech.length - 4 }}
+        </span>
+
+      }
+
+    </div>
+
+    <a
+      class="view-project"
+      [routerLink]="['/projects', project().id]"
+    >
+
+      <span>View Project</span>
+
+      <span class="arrow">→</span>
+
+    </a>
+
+  </div>
+
+</article>

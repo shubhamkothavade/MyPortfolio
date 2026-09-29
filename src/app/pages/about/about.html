@@ -1,43 +1,252 @@
 <section class="about">
-  <h1>About Me</h1>
-  <p class="summary">{{ summary }}</p>
 
-  <div class="stats">
+  <!-- HERO -->
+
+  <section class="about-hero">
+
+    <div class="about-intro">
+
+      <p class="eyebrow">
+        ABOUT ME
+      </p>
+
+      <h1>
+        Building reliable
+        <span>business applications.</span>
+      </h1>
+
+      <p class="summary">
+        {{ summary }}
+      </p>
+
+      <div class="about-tags">
+        <span>C#</span>
+        <span>ASP.NET Core</span>
+        <span>SQL Server</span>
+        <span>Oracle</span>
+        <span>SAP RFC/BAPI</span>
+        <span>.NET MAUI</span>
+      </div>
+
+    </div>
+
+
+    <div class="about-profile">
+
+      <div class="profile-icon">
+        &lt;/&gt;
+      </div>
+
+      <p>
+        SOFTWARE DEVELOPER
+      </p>
+
+      <h2>
+        4+ Years
+      </h2>
+
+      <span>
+        Building enterprise software,
+        integrations and business solutions.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- STATS -->
+
+  <section class="stats">
+
     @for (s of stats; track s.label) {
+
       <div class="stat">
-        <strong>{{ s.value }}</strong>
-        <span>{{ s.label }}</span>
-      </div>
-    }
-  </div>
 
-  <h2>Experience</h2>
-  <div class="timeline">
-    @for (job of experience; track job.company) {
-      <article class="job">
-        <h3>{{ job.role }}</h3>
-        <p class="company">{{ job.company }}</p>
-        @if (job.client) {
-          <p class="client">Client: {{ job.client }}</p>
-        }
-        <p class="period">{{ job.period }}</p>
-        <ul>
-          @for (p of job.points; track p) {
-            <li>{{ p }}</li>
-          }
-        </ul>
-      </article>
-    }
-  </div>
+        <strong>
+          {{ s.value }}
+        </strong>
 
-  <h2>Education</h2>
-  <div class="education">
-    @for (e of education; track e.degree) {
-      <div class="edu">
-        <h3>{{ e.degree }}</h3>
-        <p>{{ e.place }}</p>
-        <span>{{ e.years }}</span>
+        <span>
+          {{ s.label }}
+        </span>
+
       </div>
+
     }
-  </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience-section">
+
+    <div class="section-heading">
+
+      <p>CAREER JOURNEY</p>
+
+      <h2>
+        Professional Experience
+      </h2>
+
+      <span>
+        My experience working on enterprise applications,
+        integrations and business solutions.
+      </span>
+
+    </div>
+
+
+    <div class="timeline">
+
+      @for (job of experience; track job.company) {
+
+        <article class="job">
+
+          <div class="timeline-marker"></div>
+
+
+          <div class="job-card">
+
+            <div class="job-header">
+
+              <div>
+
+                <p class="period">
+                  {{ job.period }}
+                </p>
+
+                <h3>
+                  {{ job.role }}
+                </h3>
+
+                <p class="company">
+                  {{ job.company }}
+                </p>
+
+                @if (job.client) {
+
+                  <p class="client">
+                    Client: {{ job.client }}
+                  </p>
+
+                }
+
+              </div>
+
+            </div>
+
+
+            <div class="job-divider"></div>
+
+
+            <ul>
+
+              @for (p of job.points; track p) {
+
+                <li>
+                  <span>✓</span>
+                  {{ p }}
+                </li>
+
+              }
+
+            </ul>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section class="education-section">
+
+    <div class="section-heading">
+
+      <p>EDUCATION</p>
+
+      <h2>
+        Academic Background
+      </h2>
+
+      <span>
+        My educational background and qualifications.
+      </span>
+
+    </div>
+
+
+    <div class="education-grid">
+
+      @for (e of education; track e.degree) {
+
+        <article class="edu">
+
+          <div class="edu-icon">
+            🎓
+          </div>
+
+          <div>
+
+            <span class="edu-years">
+              {{ e.years }}
+            </span>
+
+            <h3>
+              {{ e.degree }}
+            </h3>
+
+            <p>
+              {{ e.place }}
+            </p>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT CTA -->
+
+  <section class="about-cta">
+
+    <div>
+
+      <p>
+        LET'S CONNECT
+      </p>
+
+      <h2>
+        Interested in working together?
+      </h2>
+
+      <span>
+        Explore my projects or get in touch to discuss
+        a business application or software solution.
+      </span>
+
+    </div>
+
+    <a
+      routerLink="/contact"
+      class="cta-button"
+    >
+      Contact Me →
+    </a>
+
+  </section>
+
 </section>

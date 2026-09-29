@@ -8,6 +8,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  menuOpen = false;
+
   exactMatch = { exact: true };
   partialMatch = { exact: false };
 
@@ -18,4 +20,12 @@ export class Navbar {
     { label: 'Projects', path: '/projects', options: this.partialMatch },
     { label: 'Contact', path: '/contact', options: this.partialMatch },
   ];
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }

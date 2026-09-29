@@ -1,0 +1,8 @@
+<div class="card">
+  <h3><span class="icon">{{ category().icon }}</span> {{ category().title }}</h3>
+  <div class="chips">
+    @for (s of category().skills; track s.name) {
+      <span class="chip" [class.learning]="s.learning">{{ s.name }}</span>
+    }
+  </div>
+</div>

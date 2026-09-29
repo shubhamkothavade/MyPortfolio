@@ -1,20 +1,365 @@
-<section class="hero">
-  <p class="greeting">Hello, I'm</p>
-  <h1>{{ name }}</h1>
-  <h2>{{ role }}</h2>
-  <p class="tagline">{{ tagline }}</p>
+<section class="home">
 
-  <div class="buttons">
-    <a class="btn primary" routerLink="/projects">View Projects</a>
-    <a class="btn outline" routerLink="/contact">Contact Me</a>
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="greeting">
+        Hello, I'm
+      </p>
+
+      <h1>
+        {{ name }}
+      </h1>
+
+      <h2>
+        {{ role }}
+      </h2>
+
+      <p class="tagline">
+        {{ tagline }}
+      </p>
+
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          routerLink="/projects"
+        >
+          View Projects
+          <span>→</span>
+        </a>
+
+        <a
+          class="btn outline"
+          routerLink="/contact"
+        >
+          Contact Me
+        </a>
+
+      </div>
+
+
+      <div class="tags">
+
+        <span>C#</span>
+        <span>ASP.NET Core</span>
+        <span>SQL Server</span>
+        <span>Web API</span>
+        <span>SAP RFC/BAPI</span>
+        <span>Angular</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- HERO SIDE -->
+
+    <div class="hero-side">
+
+      <div class="profile-card">
+
+        <div class="profile-icon">
+          &lt;/&gt;
+        </div>
+
+        <p class="profile-label">
+          SOFTWARE DEVELOPER
+        </p>
+
+        <h3>
+          Building enterprise
+          <br />
+          software solutions.
+        </h3>
+
+        <p>
+          Backend development, business applications,
+          integrations and modern web solutions.
+        </p>
+
+        <div class="profile-line"></div>
+
+        <div class="profile-tech">
+          <span>.NET</span>
+          <span>SQL</span>
+          <span>SAP</span>
+          <span>Angular</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUICK STATS -->
+
+  <section class="stats">
+
+    <div class="stat">
+      <strong>4+</strong>
+      <span>Years Experience</span>
+    </div>
+
+    <div class="stat">
+      <strong>9</strong>
+      <span>Featured Projects</span>
+    </div>
+
+    <div class="stat">
+      <strong>.NET</strong>
+      <span>Primary Stack</span>
+    </div>
+
+    <div class="stat">
+      <strong>SAP</strong>
+      <span>Integration Experience</span>
+    </div>
+
+  </section>
+
+
+  <!-- WHAT I WORK WITH -->
+
+  <section class="expertise">
+
+    <div class="section-heading">
+
+      <p>TECHNICAL EXPERTISE</p>
+
+      <h2>
+        What I Work With
+      </h2>
+
+      <span>
+        Technologies and tools I use to build business applications.
+      </span>
+
+    </div>
+
+
+    <div class="expertise-grid">
+
+      <div class="expertise-card">
+
+        <div class="icon">
+          &lt;/&gt;
+        </div>
+
+        <h3>Backend Development</h3>
+
+        <p>
+          Building enterprise applications and APIs using
+          C#, ASP.NET Core, MVC and Web API.
+        </p>
+
+        <div class="mini-tags">
+          <span>C#</span>
+          <span>ASP.NET Core</span>
+          <span>Web API</span>
+        </div>
+
+      </div>
+
+
+      <div class="expertise-card">
+
+        <div class="icon">
+          DB
+        </div>
+
+        <h3>Database</h3>
+
+        <p>
+          Designing data-driven applications and working
+          with SQL Server and Oracle databases.
+        </p>
+
+        <div class="mini-tags">
+          <span>SQL Server</span>
+          <span>Oracle</span>
+          <span>LINQ</span>
+        </div>
+
+      </div>
+
+
+      <div class="expertise-card">
+
+        <div class="icon">
+          SAP
+        </div>
+
+        <h3>SAP Integration</h3>
+
+        <p>
+          Integrating SAP ERP with internal applications
+          using RFC and BAPI communication.
+        </p>
+
+        <div class="mini-tags">
+          <span>RFC</span>
+          <span>BAPI</span>
+          <span>SAP .NET Connector</span>
+        </div>
+
+      </div>
+
+
+      <div class="expertise-card">
+
+        <div class="icon">
+          NG
+        </div>
+
+        <h3>Frontend</h3>
+
+        <p>
+          Building modern interfaces with JavaScript,
+          Bootstrap and Angular.
+        </p>
+
+        <div class="mini-tags">
+          <span>Angular</span>
+          <span>JavaScript</span>
+          <span>Bootstrap</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- FEATURED PROJECTS -->
+
+<section class="featured-projects">
+
+  <div class="section-heading">
+
+    <p>SELECTED WORK</p>
+
+    <h2>
+      Featured Projects
+    </h2>
+
+    <span>
+      A selection of enterprise applications and business solutions
+      I've built across different domains.
+    </span>
+
   </div>
 
-  <div class="tags">
-  <span>C#</span>
-  <span>ASP.NET Core</span>
-  <span>SQL Server</span>
-  <span>Web API</span>
-  <span>SAP RFC/BAPI</span>
-  <span>Angular (learning)</span>
-</div>
+
+  <div class="featured-grid">
+
+    @for (project of featuredProjects; track project.id) {
+
+      <article class="featured-card">
+
+        <div class="featured-top">
+
+          <span class="category">
+            {{ project.category }}
+          </span>
+
+          <span class="project-number">
+            0{{ project.id }}
+          </span>
+
+        </div>
+
+
+        <h3>
+          {{ project.title }}
+        </h3>
+
+
+        <p class="client">
+          {{ project.client }}
+        </p>
+
+
+        <p class="description">
+          {{ project.description }}
+        </p>
+
+
+        <div class="project-tech">
+
+          @for (tech of project.tech.slice(0, 4); track tech) {
+
+            <span>
+              {{ tech }}
+            </span>
+
+          }
+
+        </div>
+
+
+        <a
+          class="project-link"
+          [routerLink]="['/projects', project.id]"
+        >
+          View Project
+          <span>→</span>
+        </a>
+
+      </article>
+
+    }
+
+  </div>
+
+
+  <div class="all-projects">
+
+    <a
+      class="view-all"
+      routerLink="/projects"
+    >
+      View All Projects
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div>
+
+      <p>
+        HAVE A PROJECT IN MIND?
+      </p>
+
+      <h2>
+        Let's build something useful.
+      </h2>
+
+      <span>
+        I'm interested in building reliable business applications,
+        integrations and modern web solutions.
+      </span>
+
+    </div>
+
+    <a
+      class="btn primary"
+      routerLink="/contact"
+    >
+      Get In Touch →
+    </a>
+
+  </section>
+
 </section>

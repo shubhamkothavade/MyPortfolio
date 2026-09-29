@@ -1,1 +1,23 @@
-<p>projects works!</p>
+<section class="projects">
+  <h1>Featured Projects</h1>
+
+  <p class="intro">
+    A selection of applications and enterprise solutions I've built across CRM, HR, SAP integration, manufacturing, mobile and business automation.
+  </p>
+
+  <div class="filters">
+    @for (f of filters; track f) {
+      <button
+        [class.active]="selected() === f"
+        (click)="selected.set(f)">
+        {{ f }}
+      </button>
+    }
+  </div>
+
+  <div class="grid">
+    @for (p of visible(); track p.id) {
+      <app-project-card [project]="p" />
+    }
+  </div>
+</section>

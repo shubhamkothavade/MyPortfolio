@@ -1,8 +1,99 @@
 <header class="navbar">
-  <a class="logo" routerLink="/">SHUBHAM KOTHAVADE</a>
-  <nav>
-    <ul>
-      @for (link of links; track link.path) { <li><a [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="link.options">{{ link.label }}</a></li> }
-    </ul>
-  </nav>
+
+  <div class="nav-container">
+
+    <!-- Logo -->
+
+    <a
+      class="logo"
+      routerLink="/"
+      (click)="closeMenu()"
+    >
+      SHUBHAM KOTHAVADE
+    </a>
+
+
+    <!-- Desktop Navigation -->
+
+    <nav
+      class="desktop-nav"
+      aria-label="Main navigation"
+    >
+
+      <ul>
+
+        @for (link of links; track link.path) {
+
+          <li>
+
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="link.options"
+            >
+              {{ link.label }}
+            </a>
+
+          </li>
+
+        }
+
+      </ul>
+
+    </nav>
+
+
+    <!-- Mobile Menu Button -->
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Navigation -->
+
+  @if (menuOpen) {
+
+    <nav
+      class="mobile-nav"
+      aria-label="Mobile navigation"
+    >
+
+      <ul>
+
+        @for (link of links; track link.path) {
+
+          <li>
+
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="link.options"
+              (click)="closeMenu()"
+            >
+              {{ link.label }}
+            </a>
+
+          </li>
+
+        }
+
+      </ul>
+
+    </nav>
+
+  }
+
 </header>
